@@ -1,6 +1,9 @@
 # media-projector
-HTML5 media projector, if anyone has any suggestions, I'm all ears.
-No immedeate plans for this project, but I expect to revisit it from time to time, when I need new functionality.
+A HTML5 media projector. Utilising the capabilities of HTML5. Images, videos and overlays supported.
+
+## roadmap
+if anyone has any suggestions, I'm all ears.
+I have no immedeate plans for this project, but I expect to revisit it from time to time, when I need new functionality.
 I used to make a lot of these presentations for concept makers and I know what a stunning visual is worth.
 
 ## how to use
