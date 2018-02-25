@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Presentatie Josine</title>
+	<style>
+		html,body{
+			margin: 0; padding: 0;
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+		}
+		#mediacontainer{
+			position: absolute;
+			margin: 0; padding: 0;
+			background-color: #000;
+			z-index: 0;
+			top:0px;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			color: #fff;
+		}
+		video{
+			position: absolute;
+			top:0px;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			width: 100%;
+			height: 100%;
+		}
+		img{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left:0px;
+			right:0px;
+			width: 100%;
+		}
+		#overlay
+		{
+			font-family: futura, sans-serif;
+			z-index: 2147483647; /* this is a bad hack, to get on top of video in fullscreen mode, but nobody seems to want to fix it...? */
+			color: #aaa;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	</style>
+</head>
+<body> 
+	<div id="mediacontainer">
+		<video id="video" autoplay>
+		</video>
+		<img id="image" src="media/zwart.png" alt="image">
+	</div>
+	<div id="overlay">Klik om fullscreen te gaan</div>
+<script>
+	var media=[
+				{src:"zwart.png",time: 0.0, end: "next", click: "next",kind: "image"},
+				{src:"marcheren.mp4",end: "next", click: "next",kind: "video"},
+				{src:"karateka.jpg",time: 0, click: "next",kind: "image"},
+				{src:"vechten-naar-hemel.mp4",end: "next", click: "next",kind: "video"},
+				{src:"dames-in-hemel.jpg",time: 0, click: "next",kind: "image"},
+				{src:"eindbeeld.png",time: 0, click: "next",kind: "image"}
+			   ];
+</script>
+<script src="js/media-projector.js"></script>
+</body> 
+</html>
