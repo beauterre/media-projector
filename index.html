@@ -2,75 +2,25 @@
 <html> 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Presentatie Josine</title>
-	<style>
-		html,body{
-			margin: 0; padding: 0;
-			overflow: hidden;
-			width: 100%;
-			height: 100%;
-		}
-		#mediacontainer{
-			position: absolute;
-			margin: 0; padding: 0;
-			background-color: #000;
-			z-index: 0;
-			top:0px;
-			left:0px;
-			right:0px;
-			bottom:0px;
-			width: 100%;
-			height: 100%;
-			text-align: center;
-			color: #fff;
-		}
-		video{
-			position: absolute;
-			top:0px;
-			left:0px;
-			right:0px;
-			bottom:0px;
-			width: 100%;
-			height: 100%;
-		}
-		img{
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left:0px;
-			right:0px;
-			width: 100%;
-		}
-		#overlay
-		{
-			font-family: futura, sans-serif;
-			z-index: 2147483647; /* this is a bad hack, to get on top of video in fullscreen mode, but nobody seems to want to fix it...? */
-			color: #aaa;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 50%;
-			transform: translateX(-50%);
-		}
-	</style>
+	<title>Karin - index</title>
+	<link href="css/default.css" rel="stylesheet">
 </head>
 <body> 
-	<div id="mediacontainer">
-		<video id="video" autoplay>
-		</video>
-		<img id="image" src="media/zwart.png" alt="image">
-	</div>
-	<div id="overlay">Klik om fullscreen te gaan</div>
+	<iframe id="presentation"  allow="autoplay">
+	</iframe>
+	<div id="overlay">Klik om fullscreen te gaan en te starten.</div>
+
 <script>
-	var media=[
-				{src:"zwart.png",time: 0.0, end: "next", click: "next",kind: "image"},
-				{src:"marcheren.mp4",end: "next", click: "next",kind: "video"},
-				{src:"karateka.jpg",time: 0, click: "next",kind: "image"},
-				{src:"vechten-naar-hemel.mp4",end: "next", click: "next",kind: "video"},
-				{src:"dames-in-hemel.jpg",time: 0, click: "next",kind: "image"},
-				{src:"eindbeeld.png",time: 0, click: "next",kind: "image"}
+	var index=[
+				{id:"imagine",link:"imagine.html",click: "next", end: "loop"},
+				{id:"josine",link:"josine.html",click: "next"},
+				{id:"fields-of-gold",link:"fields-of-gold.html",click: "next"},
+				{id:"hans",link:"hans.html",click: "next", end: "next"},
+				{id:"karin",link:"karin.html",click: "next"},
+				{id:"gracias",link:"gracias.html",click: "next"},
+				{id:"lapalma",link:"lapalma.html",click: "clear",end: "loop"}
 			   ];
 </script>
-<script src="js/media-projector.js"></script>
+<script src="js/index.js"></script>
 </body> 
-</html>
+<html>
