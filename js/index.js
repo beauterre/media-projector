@@ -22,9 +22,35 @@ Index, purpose is to easily switch between more than one media-projector type pr
  }
  iframe.style.display="none";
  var last_action=Date.now();
- document.body.addEventListener("click",click,true);
- var firstclick=false;
+ document.body.addEventListener("click",firstClick,true);
  var hiding_overlay=-1;
+
+
+function showMenu()
+{
+	iframe.style.display="none";
+	iframe.src="";
+	console.log("showing menu!");
+	var sn=document.getElementById("overlay");
+	sn.style.display="block";
+	sn.innerHTML="";
+	for(var i=0;i<index.length;i++)
+	{
+		var button=document.createElement("button");
+					sn.appendChild(button);
+					button.innerHTML=index[i].id;
+					button.data=i;
+					button.addEventListener("click",doMenu);
+			   }
+			   hiding_overlay=setTimeout(hideOverlay,6000);
+
+}
+function doMenu(ev)
+{
+	console.log("do menu");
+	console.log(ev.currentTarget.getAttribute("data"));
+}
+
  //loop();
  //show();
 
@@ -77,12 +103,9 @@ Index, purpose is to easily switch between more than one media-projector type pr
    next();
  }
 
- function click()
- {
-	 console.log("click");
-  if(firstclick==false)
-  {
-   firstclick=true;
+function firstClick()
+{
+	//document.body.addEventListener("click",click,true);
    // just go fullscreen if we weren't and remove the overlay;;
    document.getElementById("overlay").style.display="none";
    var sn=document.getElementById("overlay");
@@ -91,15 +114,18 @@ Index, purpose is to easily switch between more than one media-projector type pr
    sn.innerHTML="Klik nogmaals om de presentatie te starten";
    hiding_overlay=setTimeout(hideOverlay,3000);
    fullscreen();
-  }else{
-	  console.log("second click..");
-   var m=media[current];
-   switch(m.click)
-   {
-		case "next": next(); break;
-   }
-   fullscreen();
-  }
+   // from now on, m gives you menu!
+   document.body.addEventListener("keydown",handleKeys,false);
+}
+ function click()
+ {
+     console.log("second click..");
+     var m=media[current];
+     switch(m.click)
+     {
+  		  case "next": next(); break;
+     }
+     fullscreen();
  }
  
  function hideOverlay()
